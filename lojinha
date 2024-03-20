@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Lojinha do Sr. Aboo");
+        System.out.print("Digite o valor da compra com o fornecedor: R$");
+        double valorCompra = scanner.nextDouble();
+        
+        double porcentagemLucro = 0;
+        
+        if (valorCompra < 100) {
+            porcentagemLucro = 70;
+        } else if (valorCompra >= 100 && valorCompra < 200) {
+            porcentagemLucro = 50;
+        } else if (valorCompra >= 200 && valorCompra < 500) {
+            porcentagemLucro = 40;
+        } else {
+            porcentagemLucro = 30;
+        }
+        
+        double valorVenda = valorCompra + (valorCompra * (porcentagemLucro / 100));
+        
+        System.out.println("Porcentagem de lucro: " + porcentagemLucro + "%");
+        System.out.println("Valor de venda: R$" + valorVenda);
+        
+        scanner.close();
+    }
+}
